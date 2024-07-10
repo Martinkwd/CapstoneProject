@@ -68,6 +68,16 @@ export default function HomePage() {
     setFoods(newFood);
   };
 
+  const handleSortHcalories = () => {
+    let newFood = [...foods];
+    newFood.sort(function (a, b) {
+      if (a.title > b.title) return -1;
+      if (a.title < b.title) return 1;
+      return 0;
+    });
+    setFoods(newFood);
+  };
+
   //  to add the food into the recipes once is selected
   const foodcards = foods.map((food) => (
     <Grid item key={food.id} xs={0} sm={4} ms={0}>
@@ -97,6 +107,9 @@ export default function HomePage() {
         </button>
         <button className="sortZA" onClick={handleSortLcalories}>
           Sort by low calories
+        </button>
+        <button className="sortZA" onClick={handleSortHcalories}>
+          Sort by high calories
         </button>
       </div>
 
