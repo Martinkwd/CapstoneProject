@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { FoodContext } from "../hooks/AddToRecipes";
 
-export default function TotalAmount() {
-  const { TotalAmount } = useContext(FoodContext);
+export default function TotalAmount({ TotalAmount }) {
+  // const { TotalAmount } = useContext(FoodContext);
+  console.log(TotalAmount);
 
   return (
     <>

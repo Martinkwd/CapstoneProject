@@ -1,3 +1,4 @@
+import React from "react";
 import AppRouter from "./appRouter";
 import NavBar from "./pages/NavBar";
 import { RecipesProvider } from "./hooks/AddToRecipes";

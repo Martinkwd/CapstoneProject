@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 export default function HomePage() {
   const [foods, setFoods] = useState([]);
   const [date, setDate] = useState("");
+  const [searchBar, setSearchBar] = useState("");
   const { handleAddToRecipe } = useContext(FoodContext);
   const { handleDeleteRecipes } = useContext(FoodContext);
 
@@ -78,9 +79,18 @@ export default function HomePage() {
     setFoods(newFood);
   };
 
+  //serach Bar
+  const onSearchChange = (value) => {
+    setSearchBar(value);
+  };
+
+  const foodFilter = foods.filter((food) =>
+    food.title.toLowerCase().includes(searchBar.toLowerCase())
+  );
+
   //  to add the food into the recipes once is selected
-  const foodcards = foods.map((food) => (
-    <Grid item key={food.id} xs={0} sm={4} ms={0}>
+  const foodcards = foodFilter.map((food) => (
+    <Grid item key={food.id} xs={12} sm={4} ms={0}>
       <SingleFood {...food} onAddToRecipe={DateAndFood} date={date} />
     </Grid>
   ));
@@ -112,6 +122,12 @@ export default function HomePage() {
           Sort by high calories
         </button>
       </div>
+      <input
+        className="searchBars"
+        type="search"
+        placeholder="Type recipe name to search....."
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
 
       <Container maxWidth="lg">
         <Grid container spacing={5} style={{ marginTop: "10px" }}>

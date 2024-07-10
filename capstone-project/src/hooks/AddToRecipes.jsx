@@ -1,3 +1,4 @@
+import React from "react";
 import { createContext, useState } from "react";
 
 export const FoodContext = createContext();
@@ -9,24 +10,24 @@ export const RecipesProvider = ({ children }) => {
     setCurrentRecipes((prevRecipe) => [...prevRecipe, foodItem]);
   };
 
-  const TotalAmount = {
-    calories: currentRecipes.reduce(
-      (accumulater, current) => accumulater + current.calories,
-      0
-    ),
-    protein: currentRecipes.reduce(
-      (accumulater, current) => accumulater + current.protein,
-      0
-    ),
-    carbs: currentRecipes.reduce(
-      (accumulater, current) => accumulater + current.carbs,
-      0
-    ),
-    fat: currentRecipes.reduce(
-      (accumulater, current) => accumulater + current.fat,
-      0
-    ),
-  };
+  // const TotalAmount = {
+  //   calories: currentRecipes.reduce(
+  //     (accumulater, current) => accumulater + current.calories,
+  //     0
+  //   ),
+  //   protein: currentRecipes.reduce(
+  //     (accumulater, current) => accumulater + current.protein,
+  //     0
+  //   ),
+  //   carbs: currentRecipes.reduce(
+  //     (accumulater, current) => accumulater + current.carbs,
+  //     0
+  //   ),
+  //   fat: currentRecipes.reduce(
+  //     (accumulater, current) => accumulater + current.fat,
+  //     0
+  //   ),
+  // };
 
   const handleDeleteRecipes = (id) => {
     console.log(id);
@@ -39,7 +40,7 @@ export const RecipesProvider = ({ children }) => {
         currentRecipes,
         handleAddToRecipe,
         handleDeleteRecipes,
-        TotalAmount,
+        // TotalAmount,
       }}
     >
       {children}
