@@ -1,0 +1,176 @@
+
+body{
+
+  background: url("../assets/pages.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.card-content .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  height: 4.5rem;
+  display: -webkit-box;
+  -WebkitLineClamp: 2;
+  -WebkitBoxOrient: "vertical";
+}
+
+.card-content .nutrition-info {
+  margin-top: 8px;
+  font-size: 1rem;
+  /* color: #757575; */
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-actions .add-button {
+  margin-left: 130px;
+  font-weight: bold;
+}
+
+.delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white; 
+
+   
+}
+.delete-button:hover {
+  background-color: #9a0007; 
+}
+
+
+.collapse-content .ingredients,
+.collapse-content .preparation {
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+} 
+
+.img {
+
+  height: 250px; 
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+
+/* Share Recipes */
+.componentBox {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  overflow: hidden;
+  border: 2px solid grey;
+  backdrop-filter: blur(30px);
+}
+
+.componentBox form {
+  display: grid;
+  gap: 10px;
+}
+
+.componentBox label {
+  font-weight: bold;
+}
+
+.componentBox input,
+.componentBox textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.componentBox button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.componentBox button:hover {
+  background-color: #367bc3;
+}
+
+.componentBox button:active {
+  background-color: #3177c2;
+  transform: translateY(1px);
+}
+
+.myDate{
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 40px;
+  padding: 30px;
+  text-align: center;
+  border: solid ;
+  backdrop-filter: blur(60px);
+  margin-top: 30px;
+}
+
+.totalAmount {
+  color: white; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  backdrop-filter: blur(60px);
+  /* padding: 100px; */
+  text-align: center;
+}
+
+
+.date {
+  margin: 20px;
+  padding: 5px; 
+  font-size: 13px; 
+  
+}
+
+.sortAZ, .sortZA {
+
+  border: none; /* Remove border */
+  background-color: rgb(215, 121, 121);
+  padding: 10px 20px; 
+  font-size: 13px; 
+  cursor: pointer; 
+}
+
+
+.sortAZ:hover, .sortZA:hover {
+  background-color:  rgb(141, 76, 76);;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 20px; 
+}
+
+.searchBar{
+
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+
+}
