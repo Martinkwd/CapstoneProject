@@ -10,25 +10,7 @@ export const RecipesProvider = ({ children }) => {
     setCurrentRecipes((prevRecipe) => [...prevRecipe, foodItem]);
   };
 
-  // const TotalAmount = {
-  //   calories: currentRecipes.reduce(
-  //     (accumulater, current) => accumulater + current.calories,
-  //     0
-  //   ),
-  //   protein: currentRecipes.reduce(
-  //     (accumulater, current) => accumulater + current.protein,
-  //     0
-  //   ),
-  //   carbs: currentRecipes.reduce(
-  //     (accumulater, current) => accumulater + current.carbs,
-  //     0
-  //   ),
-  //   fat: currentRecipes.reduce(
-  //     (accumulater, current) => accumulater + current.fat,
-  //     0
-  //   ),
-  // };
-
+  //context for delete button on my recipes
   const handleDeleteRecipes = (id) => {
     console.log(id);
     setCurrentRecipes(currentRecipes.filter((foods) => foods._id !== id));
@@ -40,7 +22,6 @@ export const RecipesProvider = ({ children }) => {
         currentRecipes,
         handleAddToRecipe,
         handleDeleteRecipes,
-        // TotalAmount,
       }}
     >
       {children}

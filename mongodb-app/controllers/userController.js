@@ -32,7 +32,7 @@ const createUsers = (data, res) => {
       res.send({ result: 500, error: err.message });
     });
 };
-const getUsers = (res) => {
+const getUsers = (req, res) => {
   userModel
     .find({})
     .then((data) => res.send({ result: 200, data: data }))

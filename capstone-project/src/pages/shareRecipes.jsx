@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import SingleFood from "../components/singleFoods";
 import AddFoodForm from "../forms/AddFoodForm";
@@ -7,7 +8,6 @@ const ShareRecipes = () => {
   // const [currentFood, setCurrentFood] = useState(""); // how to get the food data
 
   //method to create the spaces so I can add the names and grams only giving the corresponding spaces
-
   const handleAddfood = (newFood) => {
     const preparation = newFood.preparation.split("\n");
     const ingredients = newFood.ingredients.split("\n");
@@ -25,6 +25,7 @@ const ShareRecipes = () => {
       ingredients: ingredientData,
     };
 
+    //using axios post method to post the recipe in the data base
     axios
       .post(`http://localhost:8080/api/foods/create`, toSend)
       .then(() => {
@@ -32,14 +33,12 @@ const ShareRecipes = () => {
       })
       .catch((error) => {
         console.error(error);
-        alert("maybe later");
+        alert("try again");
       });
   };
 
   return (
     <>
-      <h1>Share recipe</h1>
-
       <AddFoodForm onAddFood={handleAddfood} />
     </>
   );

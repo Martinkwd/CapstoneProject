@@ -10,7 +10,8 @@ import Button from "@mui/material/Button";
 const MyRecipes = () => {
   const { currentRecipes, handleDeleteRecipes } = useContext(FoodContext);
 
-  //making the date as a unique to display one date each day
+  //making the date as a unique to display one date each day also the calulation of total amount
+  // data and time goes together for each section
   const uniqueDates = Array.from(
     new Set(currentRecipes.map((recipes) => recipes.date))
   );
@@ -61,13 +62,9 @@ const MyRecipes = () => {
       <Container maxWidth="lg">
         <Typography variant="h6" gutterBottom></Typography>
         {itemsDates}
-
-        {/* <TotalAmount className="totalAmount"></TotalAmount> */}
       </Container>
     </>
   );
 };
 
 export default MyRecipes;
-
-//use reduce method for total amount

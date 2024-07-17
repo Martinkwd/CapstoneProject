@@ -10,11 +10,11 @@ router.post("/create", (req, res) => {
   userController.createUsers(req.body, res);
 });
 
-router.put("/update", (req, res) => {
+router.put("/update/:id", (req, res) => {
   userController.updateUsers(req, res);
 });
 
-router.delete("/delete", (req, res) => {
+router.delete("/delete/:id", (req, res) => {
   userController.deleteUsers(req, res);
 });
 

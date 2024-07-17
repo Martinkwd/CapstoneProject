@@ -25,7 +25,7 @@ export default function SingleFood({
   picture_url,
   preparation,
   onAddToRecipe,
-  date,
+  deleteRecipe,
   _id,
 }) {
   const { handleDeleteRecipes } = useContext(FoodContext);
@@ -86,19 +86,19 @@ export default function SingleFood({
     <>
       <Container maxWidth="lg">
         <Grid container spacing={1} style={{ marginTop: "10px" }}>
-          {/* <Grid item xs={0} sm={0} ms={0}> */}
           <Card sx={{ maxWidth: 345, width: 500, height: "100%" }}>
             <CardActionArea>
               <CardMedia
                 component="img"
-                // height="250"
                 className="card-action-area img"
                 image={picture_url}
                 alt="comming soon"
               />
               <ClearIcon
                 className="delete-button"
-                onClick={() => handleDeleteRecipes(_id)}
+                onClick={() =>
+                  deleteRecipe ? deleteRecipe(_id) : handleDeleteRecipes(_id)
+                }
               ></ClearIcon>
               <CardContent className="card-content">
                 <Typography gutterBottom className="title" component="div">
@@ -150,7 +150,6 @@ export default function SingleFood({
               </CardContent>
             </Collapse>
           </Card>
-          {/* </Grid> */}
         </Grid>
       </Container>
     </>

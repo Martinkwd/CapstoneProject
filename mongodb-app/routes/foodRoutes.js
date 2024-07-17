@@ -10,12 +10,13 @@ router.post("/create", (req, res) => {
   foodController.createFoods(req.body, res);
 });
 
-router.put("/update", (req, res) => {
-  foodController.updateFoods(res);
+router.put("/update/:id", (req, res) => {
+  console.log(req.body);
+  foodController.updateFoods(req, res);
 });
 
-router.delete("/delete", (req, res) => {
-  foodController.deleteFoods(res);
+router.delete("/delete/:id", (req, res) => {
+  foodController.deleteFoods(req, res);
 });
 
 module.exports = router;

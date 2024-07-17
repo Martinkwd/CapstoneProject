@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 function AddFoodForm({ onAddFood }) {
@@ -15,6 +16,7 @@ function AddFoodForm({ onAddFood }) {
     const data = new FormData(e.target);
     onAddFood(Object.fromEntries(data));
   };
+  // format of the share recipe in share recipe page
   return (
     <>
       <div className="AddFoodFrom componentBox">

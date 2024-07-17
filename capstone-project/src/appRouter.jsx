@@ -7,12 +7,14 @@ import NavBar from "./pages/NavBar";
 import LoginRegister from "./pages/LoginRegister";
 import MyRecipes from "./pages/MyRecipes";
 import ShareRecipes from "./pages/shareRecipes";
+// import MyCommunity from "./pages/MyCommunity";
 
 function AppRouter(props) {
   return (
     <Routes>
       <Route index element={<LoginRegister {...props} />} />
       <Route path="LoginRegister" element={<LoginRegister {...props} />} />
+
       <Route
         path="HomePage"
         element={
@@ -42,16 +44,15 @@ function AppRouter(props) {
           </>
         }
       />
-
-      <Route
-        path="MyCalories"
+      {/* <Route
+        path="MyCommunity"
         element={
           <>
             <NavBar />
-            <HomePage {...props} />
+            <MyCommunity {...props} />
           </>
         }
-      />
+      /> */}
     </Routes>
   );
 }

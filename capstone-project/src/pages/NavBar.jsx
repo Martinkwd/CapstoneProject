@@ -19,6 +19,7 @@ const pages = [
   { text: "Recipes", path: "/HomePage" },
   { text: "My Recipes", path: "/MyRecipes" },
   { text: "Share recipe", path: "/shareRecipes" },
+  // { text: "Community", path: "/MyCommunity" },
 ];
 const settings = ["Logout"];
 
@@ -52,7 +53,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component={NavLink}
-            to="MyProgress"
+            to=""
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -114,7 +115,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component={NavLink}
-            to="MyProgress"
+            to=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },

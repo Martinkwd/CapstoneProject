@@ -25,7 +25,7 @@ const LoginRegister = () => {
     setAction("");
   };
 
-  //body
+  //body: this helps to make switch between the login and resgister page smoothly
   useEffect(() => {
     document.body.classList.add("bodyloginRgister");
     return () => {
@@ -35,7 +35,8 @@ const LoginRegister = () => {
 
   const handleSubmit1 = (e) => {
     e.preventDefault();
-    //login
+
+    //login condition to login into the website
     if (!userUserName || !userPassword) {
       setUserSubmit("Please fill out all fields.");
       return;
@@ -64,7 +65,7 @@ const LoginRegister = () => {
 
   const handleSubmit2 = (e) => {
     e.preventDefault();
-    //register
+    //register condition that need to be follow
     if (
       !userUserName ||
       !userEmail ||
@@ -88,6 +89,8 @@ const LoginRegister = () => {
       setUserSubmit("Please agree to the terms & conditions.");
       return;
     }
+
+    // to create users and register them into the database
     axios
       .post(`http://localhost:8080/api/users/create`, {
         userName: userUserName,
